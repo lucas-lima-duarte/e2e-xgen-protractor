@@ -18,7 +18,7 @@ describe('angularjs homepage', function() {
       todoList = element.all(by.repeater('todo in todoList.todos'));
     });
 
-    it('should list todos', function() {
+    it('should list todoss', function() {
       expect(todoList.count()).toEqual(2);
       expect(todoList.get(1).getText()).toEqual('build an AngularJS app');
     });
