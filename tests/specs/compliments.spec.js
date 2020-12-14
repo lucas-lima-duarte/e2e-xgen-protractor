@@ -6,7 +6,7 @@ var uniqid = require('uniqid');
 beforeAll(function () {
    Login.login(GLOBAL.LOGIN, GLOBAL.PASSWORD);
 });
-describe('Compliments Tests', () => {
+describe('Compliments Tests — Create', () => {
 
    it('Create an standard Compliment', () => {
       browser.get(Compliments.url.create);
@@ -23,7 +23,7 @@ describe('Compliments Tests', () => {
    });
 });
 
-describe('Check all labels [pt-br] from:', () => {
+describe('Compliments Tests — Check all labels [pt-br] from', () => {
 
    it('General', () => {
       browser.get(Compliments.url.create);

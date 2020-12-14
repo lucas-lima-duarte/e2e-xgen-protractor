@@ -4,6 +4,7 @@ var Glossary = function() {
     /* Labels */
     this.lblWord = $('[translate="form_edit_word"]'); //Padronizar
     this.lblMeaning = $('[translate="form_edit_meaning"]'); //Padronizar
+    this.lblOption = null; //Não esta conseguindo localizar pelo locator atual
     this.lblDisplayInHome = $('[class="form-label-box ng-binding"]'); //Padronizar
     
     /* Buttons */

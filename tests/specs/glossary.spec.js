@@ -6,7 +6,8 @@ var uniqid = require('uniqid');
 beforeAll(function () {
    Login.login(GLOBAL.LOGIN, GLOBAL.PASSWORD);
 });
-describe('Glossary Tests', () => {
+
+xdescribe('Glossary Tests — Create', () => {
    it('Create an standard Glossary', () => {
       browser.get(Glossary.url.create);
       browser.waitForAngular();
@@ -21,12 +22,13 @@ describe('Glossary Tests', () => {
    });
 });
 
-describe('Check all labels [pt-br] from:', () => {
+describe('Glossary Tests — Check all labels [pt-br] from:', () => {
    it('General', () => {
       browser.get(Glossary.url.create);
       browser.waitForAngular();
       expect(Glossary.lblWord.getText()).toEqual("Palavra");
       expect(Glossary.lblMeaning.getText()).toEqual("Significado");
+      //expect(Glossary.lblOption).toEqual("Opções");
       expect(Glossary.lblDisplayInHome.getText()).toEqual("Exibir na Home?");
       
    });
