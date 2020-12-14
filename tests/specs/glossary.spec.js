@@ -1,9 +1,9 @@
-var Compliments = require('../page-objects/compliments.po.js');
+var Glossary = require('../page-objects/glossary.po.js');
 var Login = require('../page-objects/login.po.js');
 var GLOBAL = require('../helper/globals.po')
 var uniqid = require('uniqid');
 
-xdescribe('Compliments Tests —', () => {
+describe('Glossary Tests —', () => {
 
    beforeAll(function () {
       Login.navigateTo();
@@ -11,17 +11,16 @@ xdescribe('Compliments Tests —', () => {
       browser.waitForAngular();
    });
 
-   it('create an standard Compliment', () => {
-      Compliments.getCreateUrl();
+   it('create an standard Glossary', () => {
+      Glossary.getCreateUrl();
       browser.waitForAngular();
 
-      Compliments.fillRequiredFields(
-         "Compliments — " + uniqid() + " — Protractor",
-         "Departament — " + uniqid() + " — Protractor",
-         "Praise — " + uniqid() + " — Protractor"
+      Glossary.fillRequiredFields(
+         "Word — " + uniqid() + " — Protractor",
+         "Meaning — " + uniqid() + " — Protractor"
       );
 
-      Compliments.save();
+      Glossary.save();
       browser.waitForAngular();
    });
 
@@ -40,9 +39,11 @@ describe('Check all labels [pt-br] from —', () => {
    });
 
    it('general', () => {
-      Compliments.getCreateUrl();
+      Glossary.getCreateUrl();
       browser.waitForAngular();
-      expect(Compliments.lblName.getText()).toEqual("Nome");
+      expect(Glossary.lblWord.getText()).toEqual("Palavra");
+      expect(Glossary.lblMeaning.getText()).toEqual("Significado");
+      expect(Glossary.lblDisplayInHome.getText()).toEqual("Exibir na Home?");
       
    });
 

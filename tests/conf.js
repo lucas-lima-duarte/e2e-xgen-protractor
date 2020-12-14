@@ -6,6 +6,8 @@ exports.config = {
     },
 
   seleniumAddress: 'http://localhost:4444/wd/hub',
+
+  allScriptsTimeout: 30000,
   
   directConnect: true,
 
@@ -15,7 +17,7 @@ exports.config = {
 
   framework: 'jasmine',
 
-  specs: ['specs/compliments.spec.js'],
+  specs: ['specs/glossary.spec.js'],
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000

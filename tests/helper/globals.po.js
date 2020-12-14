@@ -6,7 +6,7 @@ var Global = function() {
     this.DG_EVENTS = "https://tenant3-homolog.xgen.com.br/#/admin/events";
     this.CREATE_EVENTS = "https://tenant3-homolog.xgen.com.br/#/admin/events/create/general";
 
-    this.CREATE_TERM = "https://tenant3-homolog.xgen.com.br/#/admin/glossary/create/general";
+    this.CREATE_GLOSSARY = "https://tenant3-homolog.xgen.com.br/#/admin/glossary/create/general";
 
     this.CREATE_COMPLIMENTS = "https://tenant3-homolog.xgen.com.br/#/admin/compliments/create/general"
 
