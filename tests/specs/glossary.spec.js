@@ -29,8 +29,7 @@ describe('Glossary Tests — Check all labels [pt-br] from:', () => {
       expect(Glossary.lblWord.getText()).toEqual("Palavra");
       expect(Glossary.lblMeaning.getText()).toEqual("Significado");
       //expect(Glossary.lblOption).toEqual("Opções");
-      expect(Glossary.lblDisplayInHome.getText()).toEqual("Exibir na Home?");
-      
+      expect(Glossary.lblDisplayInHome.getText()).toEqual("Exibir na Home?");  
    });
 });
 
