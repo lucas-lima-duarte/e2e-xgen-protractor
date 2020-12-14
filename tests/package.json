@@ -7,7 +7,9 @@
     "uniqid": "^5.2.0",
     "uniquid": "^1.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "protractor-jasmine2-html-cli-reporter": "^1.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

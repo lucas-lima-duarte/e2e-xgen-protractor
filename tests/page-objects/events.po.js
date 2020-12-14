@@ -6,28 +6,13 @@ var Events = function() {
     /* Variables */
 
     /* Methods */
-    this.getDatagridUrl = () => {
-        browser.get(GLOBAL.DGEVENTS);
-    };
-
-    this.getCreateUrl = () => {
-        browser.get(GLOBAL.CREATE_EVENTS);
-    };
-
     this.new = () => {
         btnNew.click();
     }
 
-    /* DATA GRID */
 
-    /* Variables */
-    // var lblTitle = element(by.class('.admin-title first-crumb ng-binding'));
 
     var btnNew = $('[data-e2e="btnNew"]');
-    
-    /* Methods */
-
-    /* CREATE FORM */
     
     //Create Form
     var inputTitle = element(by.model('vm.model.title'));

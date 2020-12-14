@@ -14,14 +14,11 @@ var Glossary = function() {
     var inputWord = element(by.name('word'));
     var inputMeaning = element(by.name('meaning'));
 
-    /* Methods */
-    this.getDatagridUrl = () => {
-        browser.get();
-    };
-
-    this.getCreateUrl = () => {
-        browser.get(GLOBAL.CREATE_GLOSSARY);
-    };
+    /* URLS */
+    this.url = {
+        list: GLOBAL.BASE_URL + 'admin/glossary',
+        create: GLOBAL.BASE_URL + 'admin/glossary/create/general'
+    }
 
     
     this.fillRequiredFields = (word, meaning) => {

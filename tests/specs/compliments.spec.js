@@ -3,16 +3,13 @@ var Login = require('../page-objects/login.po.js');
 var GLOBAL = require('../helper/globals.po')
 var uniqid = require('uniqid');
 
-xdescribe('Compliments Tests —', () => {
+beforeAll(function () {
+   Login.login(GLOBAL.LOGIN, GLOBAL.PASSWORD);
+});
+describe('Compliments Tests', () => {
 
-   beforeAll(function () {
-      Login.navigateTo();
-      Login.fullLogin(GLOBAL.LOGIN, GLOBAL.PASSWORD);
-      browser.waitForAngular();
-   });
-
-   it('create an standard Compliment', () => {
-      Compliments.getCreateUrl();
+   it('Create an standard Compliment', () => {
+      browser.get(Compliments.url.create);
       browser.waitForAngular();
 
       Compliments.fillRequiredFields(
@@ -24,29 +21,18 @@ xdescribe('Compliments Tests —', () => {
       Compliments.save();
       browser.waitForAngular();
    });
-
-   afterAll(() => {
-      browser.manage().deleteAllCookies();
-   });
-
 });
 
-describe('Check all labels [pt-br] from —', () => {
+describe('Check all labels [pt-br] from:', () => {
 
-   beforeAll(function () {
-      Login.navigateTo();
-      Login.fullLogin(GLOBAL.LOGIN, GLOBAL.PASSWORD);
-      browser.waitForAngular();
-   });
-
-   it('general', () => {
-      Compliments.getCreateUrl();
+   it('General', () => {
+      browser.get(Compliments.url.create);
       browser.waitForAngular();
       expect(Compliments.lblName.getText()).toEqual("Nome");
       
    });
+});
 
-   afterAll(() => {
-      browser.manage().deleteAllCookies();
-   });
+afterAll(() => {
+   browser.manage().deleteAllCookies();
 });

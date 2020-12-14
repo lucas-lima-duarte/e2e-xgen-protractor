@@ -1,5 +1,6 @@
 var GLOBAL = require('../helper/globals.po.js')
 
+
 var Compliments = function() {
     /* Labels */
     this.lblName = $('[translate="global_name"]'); //Padronizar
@@ -13,15 +14,13 @@ var Compliments = function() {
     var inputDepartament = $('[data-e2e="TxtSummary"]'); //Mudar no arquivo a label do atributo
     var inputPraise = element(by.xpath('/html/body/div[2]/div/main/div/div/form/div/div[2]/div/div/div/div/div[2]/div[2]/div[2]/div[1]/div/div/div/p'));
 
+    /* URLS */
+    this.url = {
+        list: GLOBAL.BASE_URL + 'admin/compliments',
+        create: GLOBAL.BASE_URL + 'admin/compliments/create/general'
+    }
+
     /* Methods */
-    this.getDatagridUrl = () => {
-        browser.get();
-    };
-
-    this.getCreateUrl = () => {
-        browser.get(GLOBAL.CREATE_COMPLIMENTS);
-    };
-
     
     this.fillRequiredFields = (name, departament, praise) => {
         inputName.sendKeys(name);

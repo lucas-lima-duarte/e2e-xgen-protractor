@@ -1,7 +1,7 @@
 var Global = function() {
 
     /* URLS */
-    this.MAIN = "https://tenant3-homolog.xgen.com.br/#";
+    this.BASE_URL = "https://tenant3-homolog.xgen.com.br/#/";
 
     this.DG_EVENTS = "https://tenant3-homolog.xgen.com.br/#/admin/events";
     this.CREATE_EVENTS = "https://tenant3-homolog.xgen.com.br/#/admin/events/create/general";

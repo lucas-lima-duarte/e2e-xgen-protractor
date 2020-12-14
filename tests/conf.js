@@ -1,23 +1,31 @@
-// An example configuration file.
+var Jasmine2HtmlCliReporter = require('protractor-jasmine2-html-cli-reporter');
+
 exports.config = {
   
-  onPrepare: function(){
+  onPrepare: function () {
     browser.manage().window().maximize();
-    },
+    jasmine.getEnv().addReporter(
+      new Jasmine2HtmlCliReporter({
+        savePath: 'target/screenshots'
+      })
+    );
+  },
+  
+  cliReport: {
+    enabled: true,
+    options:{} // this support all the options for https://github.com/onury/jasmine-console-reporter.git
+  },
 
+  specs: ['specs/compliments.spec.js'],
   seleniumAddress: 'http://localhost:4444/wd/hub',
+  framework: 'jasmine',
 
   allScriptsTimeout: 30000,
-  
   directConnect: true,
 
   capabilities: {
     'browserName': 'chrome'
   },
-
-  framework: 'jasmine',
-
-  specs: ['specs/glossary.spec.js'],
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
