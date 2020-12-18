@@ -10,10 +10,13 @@ var Glossary = function() {
     /* Buttons */
     var btnNew = $('[data-e2e="btnNew"]');
     var buttonSave = $('[data-e2e="btnSave"]');
+    var btnActive = $('[data-e2e="btnInactive"]');
+    var btnSaveAndReturn = $('[data-e2e="btnSaveReturn"]');
 
     /* Inputs */
     var inputWord = element(by.name('word'));
     var inputMeaning = element(by.name('meaning'));
+    var inputHasFeatured = element(by.name('hasFeatured'));
 
     /* URLS */
     this.url = {
@@ -21,18 +24,30 @@ var Glossary = function() {
         create: GLOBAL.BASE_URL + 'admin/glossary/create/general'
     }
 
-    
+    /* Inputs */
     this.fillRequiredFields = (word, meaning) => {
         inputWord.sendKeys(word);
         inputMeaning.sendKeys(meaning);
     }
-    
+
+    this.checkHasFeatured = () => {
+        inputHasFeatured.click();
+    }
+    /* Buttons */
     this.new = () => {
         btnNew.click();
     }
 
     this.save = () => {
         buttonSave.click()
+    }
+
+    this.saveAndReturn = () => {
+        btnSaveAndReturn.click()
+    }
+
+    this.activate = () => {
+        btnActive.click()
     }
 }
 
