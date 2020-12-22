@@ -13,7 +13,7 @@ describe('Glossary Tests — Create', () => {
       browser.get(Glossary.url.create);
       browser.waitForAngular();
    });
-   xit('Create an standard Glossary', () => {
+   it('Create an standard Glossary', () => {
       Glossary.fillRequiredFields(
          "Word — Standard — " + uniqid() + " — Protractor",
          "Meaning — Standard — " + uniqid() + " — Protractor"
@@ -22,7 +22,7 @@ describe('Glossary Tests — Create', () => {
       browser.waitForAngular();
    });
 
-   xit('Create a Glossary with Has Featured checked', () => {
+   it('Create a Glossary with Has Featured checked', () => {
       Glossary.fillRequiredFields(
          "Word — Has Featured Checked — " + uniqid() + " — Protractor",
          "Meaning — Has Featured Checked — " + uniqid() + " — Protractor"
@@ -36,7 +36,7 @@ describe('Glossary Tests — Create', () => {
       .toBe(true);
    });
 
-   xit('Create a Glossary and activate', () => {
+   it('Create a Glossary and activate', () => {
       Glossary.fillRequiredFields(
          "Word — Activate — " + uniqid() + " — Protractor",
          "Meaning — Activate — " + uniqid() + " — Protractor"
@@ -49,7 +49,7 @@ describe('Glossary Tests — Create', () => {
       .getAttribute('aria-hidden'))
       .toEqual('true');
    });
-   xit('Create a Glossary with Save & Return', () => {
+   it('Create a Glossary with Save & Return', () => {
       Glossary.fillRequiredFields(
          "Word — Save & Return — " + uniqid() + " — Protractor",
          "Meaning — Save & Return — " + uniqid() + " — Protractor"
