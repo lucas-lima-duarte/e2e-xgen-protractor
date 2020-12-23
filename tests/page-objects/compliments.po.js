@@ -20,8 +20,7 @@ var Compliments = function() {
         create: GLOBAL.BASE_URL + 'admin/compliments/create/general'
     }
 
-    /* Methods */
-    
+    /* Methods */ 
     this.fillRequiredFields = (name, departament, praise) => {
         inputName.sendKeys(name);
         inputDepartament.sendKeys(departament);

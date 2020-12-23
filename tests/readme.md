@@ -1,2 +1,1 @@
-Problemas a serem investigados
-+ Quantidade maxima de caracteres em Dicionario / Links
+Tests End-to-End from an Angular application

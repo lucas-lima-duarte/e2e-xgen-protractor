@@ -16,7 +16,7 @@ exports.config = {
     options:{} // this support all the options for https://github.com/onury/jasmine-console-reporter.git
   },
 
-  specs: ['specs/link.spec.js'],
+  specs: ['specs/teams.spec.js'],
   seleniumAddress: 'http://localhost:4444/wd/hub',
   framework: 'jasmine',
 
