@@ -23,8 +23,8 @@ describe('Teams Tests — Create', () => {
 
    it('Create a Team and activate', () => {
     Teams.fillRequiredFields(
-        "Code_Standard_" + uniqid() + "_Protractor",
-        "Name — Standard — " + uniqid() + " — Protractor");
+        "Code_Activate_" + uniqid() + "_Protractor",
+        "Name — Activate — " + uniqid() + " — Protractor");
 
       Teams.activate();
       Teams.save();
@@ -37,8 +37,8 @@ describe('Teams Tests — Create', () => {
    
    it('Create a Team with Save & Return', () => {
     Teams.fillRequiredFields(
-        "Code_Standard_" + uniqid() + "_Protractor",
-        "Name — Standard — " + uniqid() + " — Protractor");
+        "Code_Save_Return_" + uniqid() + "_Protractor",
+        "Name — Save & Return — " + uniqid() + " — Protractor");
 
       Teams.saveAndReturn();
       browser.waitForAngular();
@@ -49,9 +49,9 @@ describe('Teams Tests — Create', () => {
   it('Create a Team with Description', () => {
 
     Teams.fillAllFields(
-        "Code_Activate_" + uniqid() + "_Protractor",
-        "Name — Activate — " + uniqid() + " — Protractor",
-        "Description — Activate — " + uniqid() + " — Protractor");
+        "Code_With_Description_" + uniqid() + "_Protractor",
+        "Name — with Description — " + uniqid() + " — Protractor",
+        "Description — with Description — " + uniqid() + " — Protractor");
 
       Teams.save();
       browser.waitForAngular();
