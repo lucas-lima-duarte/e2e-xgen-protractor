@@ -16,7 +16,7 @@ var Teams = function() {
     /* Inputs */
     var inputCode = element(by.name('CodName'));
     var inputName = element(by.name('name'));
-    var inputDescription = $('[data-e2e="txtDescription"]');
+    var inputDescription = element(by.model('description'));
     
     /* URLS */
     this.url = {
@@ -30,10 +30,12 @@ var Teams = function() {
         inputName.sendKeys(name);
     }
 
-    this.fillAllFields = (code, name, description) => {
-        inputCode.sendKeys(code);
-        inputName.sendKeys(name);
-        inputDescription.sendKeys(description);
+    this.fillAllFields = (title, tags, url) => {
+        inputTitle.sendKeys(title);
+        inputUrl.sendKeys(url);
+        inputTags.sendKeys(tags);
+        inputTags.sendKeys(protractor.Key.ESCAPE);
+        inputTags.sendKeys(protractor.Key.TAB);
     }
 
     this.checkHasFeatured = () => {

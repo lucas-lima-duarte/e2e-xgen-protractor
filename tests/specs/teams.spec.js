@@ -21,14 +21,13 @@ describe('Teams Tests — Create', () => {
       browser.waitForAngular();
    });
 
-   xit('Create a Team and activate', () => {
-      Link.fillAllFields(
-        "Title — Activate — " + uniqid() + " — Protractor",
-        "Tag — Activate — " + uniqid() + " — Protractor",
-        "http://www.protractortest" + uniqid() + ".org");
+   it('Create a Team and activate', () => {
+    Teams.fillRequiredFields(
+        "Code_Standard_" + uniqid() + "_Protractor",
+        "Name — Standard — " + uniqid() + " — Protractor");
 
-      Link.activate();
-      Link.save();
+      Teams.activate();
+      Teams.save();
       browser.waitForAngular();
 
       expect($('[data-e2e="btnInactive"]')
@@ -36,38 +35,36 @@ describe('Teams Tests — Create', () => {
       .toEqual('true');
    });
    
-   xit('Create a Link with Save & Return', () => {
-    Link.fillAllFields(
-        "Title — Save and Return — " + uniqid() + " — Protractor",
-        "Tag — Save and Return — " + uniqid() + " — Protractor",
-        "http://www.protractortest" + uniqid() + ".org");
+   it('Create a Team with Save & Return', () => {
+    Teams.fillRequiredFields(
+        "Code_Standard_" + uniqid() + "_Protractor",
+        "Name — Standard — " + uniqid() + " — Protractor");
 
-      Link.saveAndReturn();
+      Teams.saveAndReturn();
       browser.waitForAngular();
 
-      expect(browser.getCurrentUrl()).toBe(Link.url.list);
+      expect(browser.getCurrentUrl()).toBe(Teams.url.list);
    });
 
-  xit('Create a Link with Tags', () => {
+  it('Create a Team with Description', () => {
 
-      Link.fillAllFields(
-          "Title — With tags — " + uniqid() + " — Protractor",
-          "Tag — With tags — " + uniqid() + " — Protractor",
-          "http://www.protractortest" + uniqid() + ".org");
+    Teams.fillAllFields(
+        "Code_Activate_" + uniqid() + "_Protractor",
+        "Name — Activate — " + uniqid() + " — Protractor",
+        "Description — Activate — " + uniqid() + " — Protractor");
 
-      Link.save();
+      Teams.save();
       browser.waitForAngular();
    });
 
-   xit('Create a Link with Max caracteres', () => {
-      Link.fillAllFields(
-         "X------Title — Max caracteres " + uniqid() + " — Protractor ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------X",
-         "Tag — Max caracteres",
-         "http://www.X------UrlMaxCaracteres" + uniqid() + "Protractor--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------X.org"
-         
+   it('Create a Team with Max caracteres', () => {
+      Teams.fillAllFields(
+         "X--Code--Max--Caracteres--xxxxxxxxxxxxxxxxx" + uniqid() + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+         "X--Name--Max--Caracteres--xxxxxxxxxxxxxxxxx" + uniqid() + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+         "X--Description--Max--Caracteres--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + uniqid() + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"     
       );
       
-      Link.save();
+      Teams.save();
       browser.waitForAngular();
    });
 });
